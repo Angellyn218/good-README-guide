@@ -50,51 +50,7 @@ const questions = [{ // Title
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     console.log(data);
-    generateMarkdown(data);
-    const dataStr = `# ${data.title}
-     
-## Description
-
-${data.description}
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Badges](#badges)
-- [Questions](#questions)
-
-## Installation
-
-${data.installation}
-
-## Usage
-
-${data.usage}
-
-## License
-
-Please refer to LICENSE in this repository
-
-## Contributing
-
-${data.contributing}
-
-## Tests
-
-${data.tests}
-
-## Badges
-
-add based on repo
-
-## Questions
-
-If you have any questions, contact me using [${data.email}](${data.email}) or check my [github](https://github.com/${data.github}).
-`;
+    const dataStr = generateMarkdown(data);
     fs.writeFile(fileName, dataStr, (err) =>
     err ? console.log(err) : console.log('Successfully created README!'));
 }
