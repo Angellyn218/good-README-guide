@@ -1,18 +1,73 @@
+const axios = require("axios");
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license === 'no license') {
+    return "";
+  }
+
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+const licenses = [{key: 'mit', id: 'MIT License'}, {key: 'gpl-3.0', id: 'GNU GPLv3'}, {key: 'apache-2.0', id: 'Apache License 2.0'}, {key: 'isc', id: 'ISC License'}]
+
+function renderLicenseLink(license) {
+  if (license === 'no license') {
+    return "";
+  } else {
+    fetchLicense(license);
+  }
+}
+
+async function fetchLicense(license) {
+  const key = findKey(license);
+  const queryURL = `https://api.github.com/licenses${key}`;
+  // fetch(queryURL)
+  //   .then(function (response) {
+  //     if (response.ok) {
+  //       response.json().then(function (data) {
+  //         // body of license
+  //         console.log(data.body);
+  //         makeLicense(data.body);
+  //       });
+  //     } else {
+  //       console.log('Error: ' + response.statusText);
+  //     }
+  //   })
+  //   .catch(function (error) {
+  //     console.log('Error: unable to get license');
+  // });
+  axios
+    .get(queryURL)
+    .then(function(data) {
+      console.log(data.data);
+      makeLicense(data.data);
+    });
+}
+
+// Render license file
+function makeLicense(body) {
+  console.log("make license");
+}
+
+function findKey(license) {
+  console.log("find key");
+  return "";
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license === 'no license') {
+    return "";
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   console.log("Generated markdown!");
+  renderLicenseLink(data.license);
   return `# ${data.title}
      
   ## Description
