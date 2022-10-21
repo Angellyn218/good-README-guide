@@ -91,7 +91,7 @@ add based on repo
 
 ## Questions
 
-If you have any questions, contact me ${data.email} or check my github 
+If you have any questions, contact me using [${data.email}](${data.email}) or check my [github](https://github.com/${data.github}).
 `;
     fs.writeFile(fileName, dataStr, (err) =>
     err ? console.log(err) : console.log('Successfully created README!'));
