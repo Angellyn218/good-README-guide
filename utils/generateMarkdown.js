@@ -5,7 +5,7 @@ const fs = require('fs');
 function renderLicenseBadge(license) {
   if (license === 'no license') {
     return "";
-  }
+  } else `https://img.shields.io/badge/license-${license}-green`
 
 }
 
@@ -63,6 +63,7 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   console.log("Generated markdown!");
   const licenseSect = renderLicenseSection(data.license);
+  const badge = renderLicenseBadge(data.license);
   return `# ${data.title}
      
   ## Description
@@ -101,7 +102,7 @@ function generateMarkdown(data) {
   
   ## Badges
   
-  add based on repo
+  ${badge}
   
   ## Questions
   
