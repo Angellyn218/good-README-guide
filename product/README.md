@@ -3,6 +3,8 @@
   ## Description
 
   A description that explains why I made this project.
+
+  ![badmath](https://img.shields.io/badge/license-MIT%20License-green)
   
   ## Table of Contents
   
@@ -11,7 +13,6 @@
   - [License](#license)
   - [Contributing](#contributing)
   - [Tests](#tests)
-  - [Badges](#badges)
   - [Questions](#questions)
   
   ## Installation
@@ -33,10 +34,6 @@
   ## Tests
   
   Tests will be added later
-  
-  ## Badges
-  
-  ![badmath](https://img.shields.io/badge/license-MIT%20License-green)
   
   ## Questions
   

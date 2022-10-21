@@ -71,6 +71,8 @@ function generateMarkdown(data) {
   ## Description
 
   ${data.description}
+
+  ![badmath](${badge})
   
   ## Table of Contents
   
@@ -101,10 +103,6 @@ function generateMarkdown(data) {
   ## Tests
   
   ${data.tests}
-  
-  ## Badges
-  
-  ![badmath](${badge})
   
   ## Questions
   
