@@ -22,22 +22,7 @@ function renderLicenseLink(license) {
 
 async function fetchLicense(license) {
   const key = findKey(license);
-  const queryURL = `https://api.github.com/licenses${key}`;
-  // fetch(queryURL)
-  //   .then(function (response) {
-  //     if (response.ok) {
-  //       response.json().then(function (data) {
-  //         // body of license
-  //         console.log(data.body);
-  //         makeLicense(data.body);
-  //       });
-  //     } else {
-  //       console.log('Error: ' + response.statusText);
-  //     }
-  //   })
-  //   .catch(function (error) {
-  //     console.log('Error: unable to get license');
-  // });
+  const queryURL = `https://api.github.com/licenses/${key}`;
   axios
     .get(queryURL)
     .then(function(data) {
@@ -53,6 +38,11 @@ function makeLicense(body) {
 
 function findKey(license) {
   console.log("find key");
+  for (let i = 0; i < licenses.length; i++) {
+    if (licenses[i].id === license) {
+      return licenses[i].key;
+    }
+  }
   return "";
 }
 
