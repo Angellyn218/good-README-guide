@@ -7,7 +7,6 @@ function renderLicenseBadge(license) {
     return "";
   } else {
     let licenseStr = license.split(" ").join("%20");
-    console.log("license string: " + licenseStr);
     return `https://img.shields.io/badge/license-${licenseStr}-green`
   }
 
@@ -65,7 +64,6 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  console.log("Generated markdown!");
   const licenseSect = renderLicenseSection(data.license);
   const badge = renderLicenseBadge(data.license);
   return `# ${data.title}
