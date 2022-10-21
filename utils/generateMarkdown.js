@@ -17,12 +17,13 @@ function renderLicenseLink(license) {
   if (license === 'no license') {
     return "";
   } else {
-    fetchLicense(license);
+    const key = findKey(license);
+    fetchLicense(key);
+    return `http://choosealicense.com/licenses/${key}/`;
   }
 }
 
-async function fetchLicense(license) {
-  const key = findKey(license);
+async function fetchLicense(key) {
   const queryURL = `https://api.github.com/licenses/${key}`;
   axios
     .get(queryURL)
@@ -51,14 +52,17 @@ function findKey(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license === 'no license') {
-    return "";
+    return `This repository has no license.`;
+  } else {
+    const link = renderLicenseLink(license);
+    return `Please refer to LICENSE in this repository. For more information on this license, see the [link](${link}).`
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   console.log("Generated markdown!");
-  renderLicenseLink(data.license);
+  const licenseSect = renderLicenseSection(data.license);
   return `# ${data.title}
      
   ## Description
@@ -84,8 +88,8 @@ function generateMarkdown(data) {
   ${data.usage}
   
   ## License
-  
-  Please refer to LICENSE in this repository
+
+  ${licenseSect}
   
   ## Contributing
   
