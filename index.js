@@ -60,7 +60,7 @@ function init() {
     inquirer
         // prompts: Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
         .prompt(questions)
-        .then((answers => writeToFile("GENERATED-README.md", answers)));
+        .then((answers => writeToFile("./product/README.md", answers)));
 }
 
 // Function call to initialize app
