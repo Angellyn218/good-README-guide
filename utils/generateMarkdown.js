@@ -5,7 +5,11 @@ const fs = require('fs');
 function renderLicenseBadge(license) {
   if (license === 'no license') {
     return "";
-  } else `https://img.shields.io/badge/license-${license}-green`
+  } else {
+    let licenseStr = license.split(" ").join("%20");
+    console.log("license string: " + licenseStr);
+    return `https://img.shields.io/badge/license-${licenseStr}-green`
+  }
 
 }
 
@@ -102,11 +106,11 @@ function generateMarkdown(data) {
   
   ## Badges
   
-  ${badge}
+  ![badmath](${badge})
   
   ## Questions
   
-  If you have any questions, contact me using [${data.email}](${data.email}) or check my [github](https://github.com/${data.github}).
+  If you have any questions, contact me through [${data.email}](${data.email}) or check my [github](https://github.com/${data.github}).
   `;
 }
 
