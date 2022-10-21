@@ -32,10 +32,6 @@ const questions = [{ // Title
     type: 'input',
     name: 'tests',
     message: "What are the tests that are contained within your repo?"
-}, { // Questions
-    type: 'input',
-    name: 'questions',
-    message: "What are questions about your repo that you want others to know the answer to?"
 }, { // Github username
     type: 'input',
     name: 'github',
@@ -44,11 +40,61 @@ const questions = [{ // Title
     type: 'input',
     name: 'repo',
     message: "What is †he name of the repo that this readme will belong to?"
+}, { // email
+    type: 'input',
+    name: 'email',
+    message: "What is your email?"
 }];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     console.log(data);
+    const dataStr = `# ${data.title}
+     
+## Description
+
+${data.description}
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Badges](#badges)
+- [Questions](#questions)
+
+## Installation
+
+${data.installation}
+
+## Usage
+
+${data.usage}
+
+## License
+
+Please refer to LICENSE in this repository
+
+## Contributing
+
+${data.contributing}
+
+## Tests
+
+${data.tests}
+
+## Badges
+
+add based on repo
+
+## Questions
+
+If you have any questions, contact me ${data.email} or check my github 
+`;
+    fs.writeFile(fileName, dataStr, (err) =>
+    err ? console.log(err) : console.log('Successfully created README!'));
 }
 
 // TODO: Create a function to initialize app
