@@ -52,7 +52,7 @@ function writeToFile(fileName, data) {
     console.log(data);
     const dataStr = generateMarkdown(data);
     fs.writeFile(fileName, dataStr, (err) =>
-    err ? console.log(err) : console.log('Successfully created README!'));
+        err ? console.log(err) : console.log('Successfully created README!'));
 }
 
 // TODO: Create a function to initialize app

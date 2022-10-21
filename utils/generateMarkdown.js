@@ -1,4 +1,5 @@
 const axios = require("axios");
+const fs = require('fs');
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -26,18 +27,18 @@ async function fetchLicense(license) {
   axios
     .get(queryURL)
     .then(function(data) {
-      console.log(data.data);
-      makeLicense(data.data);
+      makeLicense(data.data.body);
     });
 }
 
 // Render license file
 function makeLicense(body) {
-  console.log("make license");
+  fs.writeFile("./product/LICENSE", body, (err) =>
+    err ? console.log(err) : console.log('Successfully created LICENSE!'));
+
 }
 
 function findKey(license) {
-  console.log("find key");
   for (let i = 0; i < licenses.length; i++) {
     if (licenses[i].id === license) {
       return licenses[i].key;
