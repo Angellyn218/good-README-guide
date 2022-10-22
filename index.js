@@ -37,10 +37,6 @@ const questions = [{ // Title
     type: 'input',
     name: 'github',
     message: "What is your Github username?"
-}, { // Github repo name
-    type: 'input',
-    name: 'repo',
-    message: "What is †he name of the repo that this readme will belong to?"
 }, { // email
     type: 'input',
     name: 'email',
@@ -51,6 +47,7 @@ const questions = [{ // Title
 function writeToFile(fileName, data) {
     console.log(data);
     const dataStr = generateMarkdown(data);
+    console.log("(See new files in 'product' folder)");
     fs.writeFile(fileName, dataStr, (err) =>
         err ? console.log(err) : console.log('Successfully created README!'));
 }

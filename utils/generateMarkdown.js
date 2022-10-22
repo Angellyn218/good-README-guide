@@ -39,8 +39,7 @@ async function fetchLicense(key) {
 // Render license file
 function makeLicense(body) {
   fs.writeFile("./product/LICENSE", body, (err) =>
-    err ? console.log(err) : console.log('Successfully created LICENSE!'));
-
+    err ? console.log(err) : console.log("Successfully created LICENSE!"));
 }
 
 // find key for given license
