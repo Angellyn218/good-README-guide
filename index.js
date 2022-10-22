@@ -45,7 +45,6 @@ const questions = [{ // Title
 
 // write README file
 function writeToFile(fileName, data) {
-    console.log(data);
     const dataStr = generateMarkdown(data);
     console.log("(See new files in 'product' folder)");
     fs.writeFile(fileName, dataStr, (err) =>

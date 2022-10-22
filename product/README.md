@@ -1,8 +1,8 @@
-# My Example Repo
+# My Example
      
   ## Description
 
-  A description that explains why I made this project.
+  A description of this repo
 
   ![badmath](https://img.shields.io/badge/license-MIT%20License-green)
   
@@ -13,15 +13,16 @@
   - [License](#license)
   - [Contributing](#contributing)
   - [Tests](#tests)
+  - [Badges](#badges)
   - [Questions](#questions)
   
   ## Installation
   
-  Use the ssh on github to clone it down to your local machine
+  Install using ssh
   
   ## Usage
   
-  Use it how you please
+  use freely
   
   ## License
 
@@ -29,11 +30,11 @@
   
   ## Contributing
   
-  Contact me with your suggestions. I will choose if I want to add it or not
+  Ask me
   
   ## Tests
   
-  Tests will be added later
+  Tests to be determined
   
   ## Questions
   
