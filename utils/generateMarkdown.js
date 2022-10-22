@@ -60,7 +60,7 @@ function renderLicenseSection(license) {
     return `This repository has no license.`;
   } else {
     const link = renderLicenseLink(license);
-    return `Please refer to LICENSE in this repository. For more information on this license, see the [link](${link}).`
+    return `Please refer to [LICENSE](./LICENSE) in this repository. For more information on this license, see the [link](${link}).`
   }
 }
 

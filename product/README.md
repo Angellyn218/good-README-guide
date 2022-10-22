@@ -25,7 +25,7 @@
   
   ## License
 
-  Please refer to LICENSE in this repository. For more information on this license, see the [link](http://choosealicense.com/licenses/mit/).
+  Please refer to [LICENSE](./LICENSE) in this repository. For more information on this license, see the [link](http://choosealicense.com/licenses/mit/).
   
   ## Contributing
   
