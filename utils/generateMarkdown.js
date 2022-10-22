@@ -1,6 +1,6 @@
 const axios = require("axios");
 const fs = require('fs');
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === 'no license') {
@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 
 }
 
-// TODO: Create a function that returns the license link
+// Returns the license link
 // If there is no license, return an empty string
 const licenses = [{key: 'mit', id: 'MIT License'}, {key: 'gpl-3.0', id: 'GNU GPLv3'}, {key: 'apache-2.0', id: 'Apache License 2.0'}, {key: 'isc', id: 'ISC License'}]
 
@@ -26,6 +26,7 @@ function renderLicenseLink(license) {
   }
 }
 
+// fetch body of licnse using axios
 async function fetchLicense(key) {
   const queryURL = `https://api.github.com/licenses/${key}`;
   axios
@@ -42,6 +43,7 @@ function makeLicense(body) {
 
 }
 
+// find key for given license
 function findKey(license) {
   for (let i = 0; i < licenses.length; i++) {
     if (licenses[i].id === license) {
@@ -51,7 +53,7 @@ function findKey(license) {
   return "";
 }
 
-// TODO: Create a function that returns the license section of README
+// Returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license === 'no license') {
@@ -62,7 +64,7 @@ function renderLicenseSection(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// Generate markdown for README
 function generateMarkdown(data) {
   const licenseSect = renderLicenseSection(data.license);
   const badge = renderLicenseBadge(data.license);
